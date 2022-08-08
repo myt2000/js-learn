@@ -43,15 +43,15 @@ promise2.then().then().then((data) => {
 
 
 // https://github.com/promises-aplus/promises-tests  用于测试写的promise
-// 可以直接安装 npm install -g promises-aplus-tests
+// 可以直接安装 npm install -g promises-aplus-tests  测试之后无法使用，代码里使用了require，不支持该模式， 必须import
 
 // 验证promise的写的对不对的测试代码
-Promise.defer = Promise.deferred = function () {
-    let dfd =
-        dfd.promise = new Promise((resolve, reject) => {
-            dfd.resolve = resolve
-            dfd.reject = reject
-        })
-    return dfd
-}
-module.exports = Promise
+// Promise.defer = Promise.deferred = function () {
+//     let dfd =
+//         dfd.promise = new Promise((resolve, reject) => {
+//             dfd.resolve = resolve
+//             dfd.reject = reject
+//         })
+//     return dfd
+// }
+// module.exports = Promise
