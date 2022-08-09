@@ -62,6 +62,12 @@ class Promise {
 
         // 保证只有等待态的时候才能更改状态
         let resolve = (value) => {
+            if (value instanceof Promise) {
+                value.then((value) => {
+                    resolve(value)
+                }, reject)
+                return
+            }
             if (this.status === PENDING) {
                 this.value = value;
                 this.status = RESOLVED;
@@ -88,6 +94,9 @@ class Promise {
             // 方法向下传递
         }
     };
+    catch(errCallback) {    // 没有成功的then方法
+        return this.then(null, errCallback)
+    }
     then(onfulfilled, onrejected) {
         onfulfilled = typeof onfulfilled == 'function' ? onfulfilled : v => v;
         onrejected = typeof onrejected == 'function' ? onrejected : e => { throw err }
