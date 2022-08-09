@@ -66,3 +66,35 @@
 // }
 
 // console.log(checkscope())       // local scope
+
+// function test(o) {
+//     var i = 0;
+//     if (typeof o == "object") {
+//         var j = 0;
+//         for (var k = 0; k < 10; k++) {
+//             console.log(k)
+//         }
+//         console.log(k);
+//     }
+//     console.log(j)
+// }
+
+// test({});
+
+// var scope = "global";
+// function f() {
+//     console.log(scope)  // undefined
+//     var scope = "local"
+//     console.log(scope)  // local
+// }
+
+// f()
+
+
+// var truevar = 1
+// fakevar = 2
+// this.fakevar2 = 3
+// console.log(delete truevar)
+// console.log(delete fakevar)
+// console.log(delete this.fakevar2)
+
