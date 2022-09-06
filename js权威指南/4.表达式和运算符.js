@@ -19,4 +19,33 @@
 // console.log(1 in data)      // true
 // console.log(3 in data)      // false
 
+// var d = new Date();
+// console.log(d instanceof Date)      // true
+// console.log(d instanceof Object)    // true
+// console.log(d instanceof Number)    // false
+// var a = [1, 2, 3]
+// console.log(a instanceof Array)     // true
+// console.log(a instanceof Object)    // true
+// console.log(a instanceof RegExp)    // false
 
+// var geval = eval;
+// var x = "global", y = "global";
+// console.log(y)
+// function f() {
+//     var x = "local";
+//     eval("x += 'changed';");
+//     return x;
+// }
+
+// function g() {
+//     var y = "local";
+//     console.log(y)
+//     geval("y += 'changed';");
+//     return y;
+// }
+
+// console.log(f(), x);        // local changed global
+// console.log(g(), y);        // undefined:1  y += 'changed';
+
+var a = 1
+console.log(void a);        // undefined
