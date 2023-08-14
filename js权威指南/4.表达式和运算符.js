@@ -47,5 +47,16 @@
 // console.log(f(), x);        // local changed global
 // console.log(g(), y);        // undefined:1  y += 'changed';
 
-var a = 1
-console.log(void a);        // undefined
+// var a = 1
+// console.log(void a);        // undefined
+
+var x = { a: 1, b: 2 }
+for (let i in x) {
+    console.log(i)  // a b
+}
+
+var y = [1, 2, 3]
+for (let i in y) {
+    debugger;
+    console.log(i)  // 0 1 2
+}
