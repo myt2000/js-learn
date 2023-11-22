@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>
+      echart 柱状图 带箭头 调整柱子宽度 设置柱子颜色 hover时改变柱子颜色
+    </title>
+    <script src="https://cdn.bootcss.com/echarts/4.1.0.rc2/echarts.min.js"></script>
+  </head>
+  <body>
+    <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+    <div id="main" style="width: 120px; height: 80px"></div>
+    <script type="text/javascript">
+      // 基于准备好的dom，初始化echarts实例
+      var myChart = echarts.init(document.getElementById("main"));
+      // 指定图表的配置项和数据
+      var option = {
+        grid: {
+          top: "10%",
+          left: "3%",
+          right: "10%",
+          bottom: "3%",
+          containLabel: false,
+        },
+        xAxis: {
+          type: "category",
+          data: ["Mon", "Tue", "Wed", "Thu"],
+          axisLabel: {
+            show: false,
+          },
+          axisTick: {
+            show: false,
+          },
+          axisLine: {
+            symbol: ["none", "arrow"],
+            symbolSize: [5, 7],
+            lineStyle: {
+              color: "#979797",
+            },
+          },
+        },
+        yAxis: {
+          type: "value",
+          axisLabel: {
+            show: false,
+          },
+          axisTick: {
+            show: false,
+          },
+          splitLine: {
+            show: false,
+          },
+          axisLine: {
+            symbol: ["none", "arrow"],
+            symbolSize: [5, 7],
+            lineStyle: {
+              color: "#979797",
+            },
+          },
+        },
+        series: [
+          {
+            data: [120, 200, 150, 80],
+            type: "bar",
+            barCategoryGap: "80%", //调整柱子宽度
+            itemStyle: {
+              color: "#62A1A9", //设置柱子颜色
+            },
+            emphasis: {
+              itemStyle: {
+                color: "#2F4654", //hover时改变柱子颜色
+                // shadowColor: 'rgba(102,102,102,0.50)',
+                // shadowOffsetX: 0,
+                // shadowOffsetY: 2,
+                // shadowBlur: 6,
+                borderWidth: 4,
+                borderColor: "#2F4654",
+                borderType: "solid",
+              },
+            },
+          },
+        ],
+      };
+
+      // 使用刚指定的配置项和数据显示图表。
+      myChart.setOption(option);
+    </script>
+  </body>
+</html>

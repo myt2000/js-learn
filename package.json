@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "`./1.手写promise`",
   "main": "index.js",
-  "type":"module",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -17,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/myt2000/js-learn/issues"
   },
-  "homepage": "https://github.com/myt2000/js-learn#readme"
+  "homepage": "https://github.com/myt2000/js-learn#readme",
+  "dependencies": {
+    "axios": "^0.27.2"
+  }
 }
